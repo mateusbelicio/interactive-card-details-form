@@ -1,0 +1,17 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass mixins.
+// -----------------------------------------------------------------------------
+
+@use 'variables' as *;
+
+@mixin breakpoint($size) {
+  @if not map-has-key($breakpoints, $size) {
+    @media only screen and (min-width: #{calc($size / 16)}em) {
+      @content;
+    }
+  } @else {
+    @media only screen and (min-width: map-get($breakpoints, $size)) {
+      @content;
+    }
+  }
+}

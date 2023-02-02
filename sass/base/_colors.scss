@@ -1,0 +1,15 @@
+// -----------------------------------------------------------------------------
+// This file contains all colors declarations
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+:root {
+  color-scheme: light;
+
+  @each $color, $shades in $colors {
+    @each $shade, $value in $shades {
+      --clr-#{$color}-#{$shade}: #{$value};
+    }
+  }
+}

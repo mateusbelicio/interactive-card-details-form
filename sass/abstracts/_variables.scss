@@ -1,0 +1,52 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+/// Main font family
+$ff-primary: 'Space Grotesk', sans-serif;
+
+/// Container's maximum width
+/// @type Length
+$max-width: 69.375rem !default;
+
+$colors: (
+  primary: (
+    400: #6448fe,
+    500: #600594,
+  ),
+  neutral: (
+    300: #ffffff,
+    400: #dedddf,
+    500: #8e8593,
+    600: #21092f,
+  ),
+  accent: (
+    400: #ff5252,
+  ),
+);
+
+$gradient: linear-gradient(to right, clr('primary'), clr('primary', 500));
+
+/// Breakpoints map
+/// @prop {String} keys - Keys are identifiers mapped to a given length
+/// @prop {Map} values - Values are actual breakpoints expressed in pixels
+$breakpoints: (
+  'small': 37.6em,
+  'medium': 50em,
+  'large': 62.5em,
+) !default;
+
+/// Z-indexes map, gathering all Z layers of the application
+/// @access private
+/// @type Map
+/// @prop {String} key - Layer’s name
+/// @prop {Number} value - Z value mapped to the key
+$z-indexes: (
+  'above': 600,
+  'modal': 500,
+  'dropdown': 400,
+  'default': 1,
+  'below': -1,
+);
