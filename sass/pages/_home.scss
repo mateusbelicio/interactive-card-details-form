@@ -3,3 +3,14 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.home {
+  min-height: inherit;
+  display: grid;
+  grid-template-rows: minmax(min-content, to-rem(240)) minmax(min-content, 2fr);
+
+  @include breakpoint('large') {
+    grid-template-columns: minmax(min-content, to-rem(483)) 1fr;
+    grid-template-rows: none;
+  }
+}

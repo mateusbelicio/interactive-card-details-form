@@ -1,0 +1,690 @@
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
+/* Document
+   ========================================================================== */
+/**
+ * 1. Correct the line height in all browsers.
+ * 2. Prevent adjustments of font size after orientation changes in iOS.
+ */
+html {
+  line-height: 1.15; /* 1 */
+  -webkit-text-size-adjust: 100%; /* 2 */
+  min-height: 100vh;
+}
+
+/* Sections
+   ========================================================================== */
+/**
+ * Remove the margin in all browsers.
+ */
+body {
+  margin: 0;
+  min-height: inherit;
+}
+
+/**
+ * Render the `main` element consistently in IE.
+ */
+main {
+  display: block;
+}
+
+/**
+ * Correct the font size and margin on `h1` elements within `section` and
+ * `article` contexts in Chrome, Firefox, and Safari.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0;
+}
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * 1. Add the correct box sizing in Firefox.
+ * 2. Show the overflow in Edge and IE.
+ */
+hr {
+  box-sizing: content-box; /* 1 */
+  height: 0; /* 1 */
+  overflow: visible; /* 2 */
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+pre {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Remove the gray background on active links in IE 10.
+ */
+a {
+  background-color: transparent;
+}
+
+/**
+ * 1. Remove the bottom border in Chrome 57-
+ * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.
+ */
+abbr[title] {
+  border-bottom: none; /* 1 */
+  text-decoration: underline; /* 2 */
+  text-decoration: underline dotted; /* 2 */
+}
+
+/**
+ * Add the correct font weight in Chrome, Edge, and Safari.
+ */
+b,
+strong {
+  font-weight: bolder;
+}
+
+/**
+ * 1. Correct the inheritance and scaling of font size in all browsers.
+ * 2. Correct the odd `em` font sizing in all browsers.
+ */
+code,
+kbd,
+samp {
+  font-family: monospace, monospace; /* 1 */
+  font-size: 1em; /* 2 */
+}
+
+/**
+ * Add the correct font size in all browsers.
+ */
+small {
+  font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` elements from affecting the line height in
+ * all browsers.
+ */
+sub,
+sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove the border on images inside links in IE 10.
+ */
+img {
+  border-style: none;
+  max-width: 100%;
+  display: block;
+}
+
+/* Forms
+   ========================================================================== */
+/**
+ * 1. Change the font styles in all browsers.
+ * 2. Remove the margin in Firefox and Safari.
+ */
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: inherit; /* 1 */
+  font-size: 100%; /* 1 */
+  line-height: 1.15; /* 1 */
+  margin: 0; /* 2 */
+}
+
+/**
+ * Show the overflow in IE.
+ * 1. Show the overflow in Edge.
+ */
+button,
+input {
+  /* 1 */
+  overflow: visible;
+}
+
+/**
+ * Remove the inheritance of text transform in Edge, Firefox, and IE.
+ * 1. Remove the inheritance of text transform in Firefox.
+ */
+button,
+select {
+  /* 1 */
+  text-transform: none;
+}
+
+/**
+ * Correct the inability to style clickable types in iOS and Safari.
+ */
+button,
+[type=button],
+[type=reset],
+[type=submit] {
+  -webkit-appearance: button;
+}
+
+/**
+ * Remove the inner border and padding in Firefox.
+ */
+button::-moz-focus-inner,
+[type=button]::-moz-focus-inner,
+[type=reset]::-moz-focus-inner,
+[type=submit]::-moz-focus-inner {
+  border-style: none;
+  padding: 0;
+}
+
+/**
+ * Restore the focus styles unset by the previous rule.
+ */
+form,
+fieldset,
+legend,
+label,
+input {
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * 1. Correct the text wrapping in Edge and IE.
+ * 2. Correct the color inheritance from `fieldset` elements in IE.
+ * 3. Remove the padding so developers are not caught out when they zero out
+ *    `fieldset` elements in all browsers.
+ */
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
+
+/**
+ * Add the correct vertical alignment in Chrome, Firefox, and Opera.
+ */
+progress {
+  vertical-align: baseline;
+}
+
+/**
+ * Remove the default vertical scrollbar in IE 10+.
+ */
+textarea {
+  overflow: auto;
+}
+
+/**
+ * 1. Add the correct box sizing in IE 10.
+ * 2. Remove the padding in IE 10.
+ */
+[type=checkbox],
+[type=radio] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
+
+/**
+ * Correct the cursor style of increment and decrement buttons in Chrome.
+ */
+[type=number]::-webkit-inner-spin-button,
+[type=number]::-webkit-outer-spin-button {
+  height: auto;
+}
+
+/**
+ * 1. Correct the odd appearance in Chrome and Safari.
+ * 2. Correct the outline style in Safari.
+ */
+[type=search] {
+  -webkit-appearance: textfield; /* 1 */
+  outline-offset: -2px; /* 2 */
+}
+
+/**
+ * Remove the inner padding in Chrome and Safari on macOS.
+ */
+[type=search]::-webkit-search-decoration {
+  -webkit-appearance: none;
+}
+
+/**
+ * 1. Correct the inability to style clickable types in iOS and Safari.
+ * 2. Change font properties to `inherit` in Safari.
+ */
+::-webkit-file-upload-button {
+  -webkit-appearance: button; /* 1 */
+  font: inherit; /* 2 */
+}
+
+/* Interactive
+   ========================================================================== */
+/*
+ * Add the correct display in Edge, IE 10+, and Firefox.
+ */
+details {
+  display: block;
+}
+
+/*
+ * Add the correct display in all browsers.
+ */
+summary {
+  display: list-item;
+}
+
+/* Misc
+   ========================================================================== */
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+  display: none;
+}
+
+/**
+ * Add default color scheme
+ */
+:root {
+  color-scheme: light;
+}
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+@keyframes errorAlert {
+  0%, 20%, 40%, 60% {
+    transform: translateX(-5px);
+  }
+  10%, 30%, 50%, 70% {
+    transform: translateX(5px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+:root {
+  color-scheme: light;
+  --clr-primary-400: #6448fe;
+  --clr-primary-500: #600594;
+  --clr-neutral-300: #ffffff;
+  --clr-neutral-400: #dedddf;
+  --clr-neutral-500: #8e8593;
+  --clr-neutral-600: #21092f;
+  --clr-accent-400: #ff5252;
+}
+
+/**
+ * Set up a decent box model on the root element
+ */
+html {
+  box-sizing: border-box;
+}
+
+/**
+ * Make all elements from the DOM inherit from the parent box-sizing
+ * Since `*` has a specificity of 0, it does not override the `html` value
+ * making all elements inheriting from the root box-sizing value
+ * See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+ */
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0;
+}
+
+/**
+ * Clear inner floats
+ */
+.clearfix::after {
+  clear: both;
+  content: "";
+  display: table;
+}
+
+/**
+ * Main content containers
+ * 1. Make the container full-width with a maximum width
+ * 2. Center it in the viewport
+ * 3. Leave some space on the edges, especially valuable on small screens
+ */
+.container {
+  display: grid;
+  grid-template-columns: 1.5rem [center-start] minmax(20rem, 69.375rem) [center-end] 1.5rem;
+  margin-inline: auto;
+}
+.container > * {
+  grid-column: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: [full-start] repeat(8, [col-start] minmax(0, 8.671875rem) [col-end]) [full-end];
+}
+
+.flex {
+  display: flex;
+}
+
+/**
+ * Hide text while making it readable for screen readers
+ * 1. Needed in WebKit-based browsers because of an implementation bug;
+ *    See: https://code.google.com/p/chromium/issues/detail?id=457146
+ */
+.hide-text {
+  overflow: hidden;
+  padding: 0; /* 1 */
+  text-indent: 101%;
+  white-space: nowrap;
+}
+
+/**
+ * Hide element while making it readable for screen readers
+ * Shamelessly borrowed from HTML5Boilerplate:
+ * https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css#L119-L133
+ */
+.visually-hidden {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.hidden {
+  display: none;
+}
+
+/**
+ * Basic typography style for copy text
+ */
+body {
+  font-size: 1.125rem;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  color: var(--clr-neutral-500);
+}
+
+h1,
+.h1 {
+  font-size: clamp(1.5rem, 4.9479166667vw, 3.25rem);
+  font-weight: 300;
+  color: var(--clr-neutral-400);
+  letter-spacing: -0.04em;
+}
+
+input,
+input::placeholder {
+  font-size: 1rem;
+}
+
+.header {
+  background-image: url(../images/bg-main-mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+}
+@media only screen and (min-width: 68em) {
+  .header {
+    background-image: url(../images/bg-main-desktop.png);
+  }
+}
+.header .card {
+  position: absolute;
+}
+.header .card--back {
+  right: calc((100vw - 23.4375rem) * 0.45);
+  top: 2rem;
+  animation: slideInLeft 0.8s ease-out backwards;
+}
+@media only screen and (min-width: 68em) {
+  .header .card--back {
+    right: auto;
+    top: 52%;
+    left: 53.75%;
+    animation: slideInRight 0.8s ease-out backwards;
+  }
+}
+.header .card--front {
+  left: calc((100vw - 23.4375rem) * 0.45);
+  bottom: -2.75rem;
+  animation: slideInRight 0.8s ease-out backwards;
+}
+@media only screen and (min-width: 68em) {
+  .header .card--front {
+    bottom: 52%;
+    left: 34.16%;
+    animation: slideInLeft 0.8s ease-out backwards;
+  }
+}
+
+.details {
+  align-self: center;
+  padding-block: 5rem;
+}
+
+.btn {
+  background-color: var(--clr-neutral-600);
+  color: var(--clr-neutral-300);
+  cursor: pointer;
+  font-weight: 500;
+  padding: 1.125rem 2rem;
+  border-radius: 0.5rem;
+  border: 1px solid transparent;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+}
+.btn:hover {
+  background-color: var(--clr-neutral-300);
+  color: var(--clr-neutral-600);
+  border-color: currentColor;
+}
+
+.card {
+  display: block;
+  aspect-ratio: 1/0.55;
+  width: 17.875rem;
+  padding: 1.125rem 1.25rem;
+  position: relative;
+  border-radius: 0.5rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0.8rem 0.8rem 1.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  color: var(--clr-neutral-300);
+  text-transform: uppercase;
+  transition: width 0.5s, padding 0.5s;
+}
+@media only screen and (min-width: 87.5em) {
+  .card {
+    width: 27.9375rem;
+    padding: 1.75rem 2rem;
+  }
+}
+.card--back {
+  background-image: url(../images/bg-card-back.png);
+}
+.card__cvc {
+  font-size: 0.625rem;
+  letter-spacing: 0.065em;
+  position: absolute;
+  top: 45%;
+  right: 12%;
+  transition: font-size 0.5s;
+}
+@media only screen and (min-width: 87.5em) {
+  .card__cvc {
+    letter-spacing: 0.12em;
+    font-size: 0.875rem;
+  }
+}
+.card--front {
+  background-image: url(../images/bg-card-front.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.card__info {
+  display: grid;
+  grid-template-columns: [full-start] 4fr 1fr [full-end];
+  grid-auto-rows: min-content;
+  row-gap: 1.125rem;
+  line-height: 1;
+}
+.card__info > * {
+  transition: font-size 0.5s;
+}
+.card__symbol {
+  grid-column: full;
+}
+.card__symbol img {
+  height: 1.875rem;
+  transition: height 0.5s;
+}
+@media only screen and (min-width: 87.5em) {
+  .card__symbol img {
+    height: 3rem;
+  }
+}
+.card__number {
+  grid-column: full;
+  letter-spacing: 0.12em;
+}
+@media only screen and (min-width: 87.5em) {
+  .card__number {
+    font-size: 1.75rem;
+  }
+}
+.card__name, .card__expiration-date {
+  font-size: 0.625rem;
+  letter-spacing: 0.065em;
+}
+@media only screen and (min-width: 87.5em) {
+  .card__name, .card__expiration-date {
+    font-size: 0.9375rem;
+    letter-spacing: 0.095em;
+  }
+}
+.card__expiration-date {
+  justify-self: end;
+}
+
+.form {
+  display: grid;
+  grid-template-columns: [full-start] repeat(2, 1fr) [full-end];
+  row-gap: 1.375rem;
+  column-gap: 0.6875rem;
+  max-width: 23.75rem;
+  margin-inline: auto;
+}
+@media only screen and (min-width: 68em) {
+  .form {
+    row-gap: 1.875rem;
+    column-gap: 1.25rem;
+    transform: translateX(3.75rem);
+    transition: transform 0.5s ease-out;
+  }
+}
+.form__field {
+  grid-column: full;
+  border: none;
+  display: flex;
+  flex-direction: column;
+}
+.form__field[name=exp-date], .form__field[name=cvc] {
+  grid-column: span 1;
+}
+.form__field .flex {
+  gap: 0.5rem;
+}
+.form__field-name {
+  font-size: 0.75rem;
+  letter-spacing: 0.165em;
+  text-transform: uppercase;
+  color: var(--clr-neutral-600);
+  display: block;
+  margin-bottom: 0.625rem;
+}
+.form__input {
+  display: block;
+  width: 100%;
+  font-size: 1.125rem;
+  padding: 0.875rem 1rem;
+  border-radius: 0.5rem;
+  border: 1px solid var(--clr-neutral-400);
+  color: var(--clr-neutral-600);
+  position: relative;
+}
+.form__input:focus-visible {
+  outline: none;
+  border-color: var(--clr-primary-500);
+}
+.form__input[data-valid=false] {
+  border-color: var(--clr-accent-400);
+}
+.form__error-msg {
+  font-size: 0.75rem;
+  color: var(--clr-accent-400);
+  margin-top: 0.625rem;
+}
+.form__input[data-valid=false] ~ .form__error-msg {
+  display: block;
+  animation: errorAlert 0.2s linear;
+}
+.form__button {
+  grid-column: full;
+}
+
+.home {
+  min-height: inherit;
+  display: grid;
+  grid-template-rows: minmax(min-content, 15rem) minmax(min-content, 2fr);
+}
+@media only screen and (min-width: 68em) {
+  .home {
+    grid-template-columns: minmax(min-content, 30.1875rem) 1fr;
+    grid-template-rows: none;
+  }
+}
+
+/*# sourceMappingURL=main.css.map */

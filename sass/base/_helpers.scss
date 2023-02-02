@@ -21,9 +21,18 @@
  */
 .container {
   $padding-inline: to-rem(24);
+  $min-width: to-rem(320);
 
-  width: min($max-width, calc(100% - 2 * $padding-inline));
+  display: grid;
+  grid-template-columns:
+    $padding-inline [center-start]
+    minmax($min-width, $max-width)
+    [center-end] $padding-inline;
   margin-inline: auto;
+
+  & > * {
+    grid-column: center;
+  }
 }
 
 .grid-container {
@@ -31,9 +40,13 @@
 
   display: grid;
   grid-template-columns:
-    1fr [center-start]
+    [full-start]
     repeat($num-grid, [col-start] minmax(0, calc($max-width / $num-grid)) [col-end])
-    [center-end] 1fr;
+    [full-end];
+}
+
+.flex {
+  display: flex;
 }
 
 /**
@@ -62,4 +75,8 @@
   padding: 0;
   position: absolute;
   width: 1px;
+}
+
+.hidden {
+  display: none;
 }

@@ -1,0 +1,23 @@
+{
+  "name": "interactive-card-details-form",
+  "version": "1.0.0",
+  "description": "This is a solution to the Interactive card details form challenge on Frontend Mentor.",
+  "main": "index.html",
+  "scripts": {
+    "watch:sass": "sass --watch sass/main.scss:style/main.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mateusbelicio/interactive-card-details-form.git"
+  },
+  "keywords": [],
+  "author": "Mateus Belício",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mateusbelicio/interactive-card-details-form/issues"
+  },
+  "homepage": "https://github.com/mateusbelicio/interactive-card-details-form",
+  "devDependencies": {
+    "sass": "^1.58.0"
+  }
+}

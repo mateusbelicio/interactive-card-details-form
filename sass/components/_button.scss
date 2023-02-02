@@ -3,3 +3,20 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.btn {
+  background-color: clr('neutral', 600);
+  color: clr('neutral', 300);
+  cursor: pointer;
+  font-weight: 500;
+  padding: to-rem(18) to-rem(32);
+  border-radius: to-rem(8);
+  border: 1px solid transparent;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+
+  &:hover {
+    background-color: clr('neutral', 300);
+    color: clr('neutral', 600);
+    border-color: currentColor;
+  }
+}

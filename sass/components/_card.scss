@@ -1,0 +1,104 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the card component.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+.card {
+  display: block;
+  aspect-ratio: 1 / 0.55;
+  width: to-rem(286);
+  padding: to-rem(18) to-rem(20);
+
+  position: relative;
+  border-radius: to-rem(8);
+  background-size: cover;
+  background-repeat: no-repeat;
+  box-shadow: 0.8rem 0.8rem 1.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  color: clr('neutral', 300);
+  text-transform: uppercase;
+
+  transition: width 0.5s, padding 0.5s;
+
+  @include breakpoint(1400) {
+    width: to-rem(447);
+    padding: to-rem(28) to-rem(32);
+  }
+
+  // Back style
+  &--back {
+    background-image: url(../images/bg-card-back.png);
+  }
+
+  &__cvc {
+    font-size: to-rem(10);
+    letter-spacing: spacing(6.5);
+    position: absolute;
+    top: 45%;
+    right: 12%;
+    transition: font-size 0.5s;
+
+    @include breakpoint(1400) {
+      letter-spacing: spacing(12);
+      font-size: to-rem(14);
+    }
+  }
+
+  // Front style
+  &--front {
+    background-image: url(../images/bg-card-front.png);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  &__info {
+    display: grid;
+    grid-template-columns: [full-start] 4fr 1fr [full-end];
+    grid-auto-rows: min-content;
+    row-gap: to-rem(18);
+    line-height: 1;
+
+    & > * {
+      transition: font-size 0.5s;
+    }
+  }
+
+  &__symbol {
+    grid-column: full;
+
+    img {
+      height: to-rem(30);
+      transition: height 0.5s;
+
+      @include breakpoint(1400) {
+        height: to-rem(48);
+      }
+    }
+  }
+
+  &__number {
+    grid-column: full;
+    letter-spacing: spacing(12);
+
+    @include breakpoint(1400) {
+      font-size: to-rem(28);
+    }
+  }
+
+  &__name,
+  &__expiration-date {
+    font-size: to-rem(10);
+    letter-spacing: spacing(6.5);
+
+    @include breakpoint(1400) {
+      font-size: to-rem(15);
+      letter-spacing: spacing(9.5);
+    }
+  }
+
+  &__expiration-date {
+    justify-self: end;
+  }
+}

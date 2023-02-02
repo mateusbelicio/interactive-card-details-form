@@ -3,3 +3,43 @@
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.header {
+  background-image: url(../images/bg-main-mobile.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  @include breakpoint('large') {
+    background-image: url(../images/bg-main-desktop.png);
+  }
+
+  .card {
+    position: absolute;
+
+    &--back {
+      right: calc((100vw - to-rem(375)) * 0.45);
+      top: to-rem(32);
+      animation: slideInLeft 0.8s ease-out backwards;
+
+      @include breakpoint('large') {
+        right: auto;
+        top: 52%;
+        left: 53.75%;
+        animation: slideInRight 0.8s ease-out backwards;
+      }
+    }
+
+    &--front {
+      left: calc((100vw - to-rem(375)) * 0.45);
+      bottom: to-rem(-44);
+      animation: slideInRight 0.8s ease-out backwards;
+
+      @include breakpoint('large') {
+        bottom: 52%;
+        left: 34.16%;
+        animation: slideInLeft 0.8s ease-out backwards;
+      }
+    }
+  }
+}

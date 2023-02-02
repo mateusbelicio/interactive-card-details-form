@@ -58,3 +58,7 @@
 @function minmax-font($min, $max) {
   @return clamp(to-rem($min), to-view-width(calc(($min + $max) / 2)), to-rem($max));
 }
+
+@function spacing($percentage) {
+  @return $percentage * 0.01em;
+}

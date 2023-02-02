@@ -223,17 +223,13 @@ button::-moz-focus-inner,
  * Restore the focus styles unset by the previous rule.
  */
 
-*:focus-visible {
-  outline: 2px dashed color('primary', 500);
-  outline-offset: 2px;
-}
-
-/**
- * Correct the padding in Firefox.
- */
-
-fieldset {
-  padding: 0.35em 0.75em 0.625em;
+form,
+fieldset,
+legend,
+label,
+input {
+  margin: 0;
+  padding: 0;
 }
 
 /**
@@ -343,14 +339,6 @@ summary {
  */
 
 template {
-  display: none;
-}
-
-/**
- * Add the correct display in IE 10.
- */
-
-[hidden] {
   display: none;
 }
 

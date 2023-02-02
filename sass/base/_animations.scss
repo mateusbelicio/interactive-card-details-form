@@ -1,0 +1,45 @@
+// -----------------------------------------------------------------------------
+// This file contains all keyframes definitions.
+// -----------------------------------------------------------------------------
+
+@keyframes slideInRight {
+  0% {
+    transform: translateX(-30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideInLeft {
+  0% {
+    transform: translateX(30%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0%);
+    opacity: 1;
+  }
+}
+
+@keyframes errorAlert {
+  0%,
+  20%,
+  40%,
+  60% {
+    transform: translateX(-5px);
+  }
+
+  10%,
+  30%,
+  50%,
+  70% {
+    transform: translateX(5px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}

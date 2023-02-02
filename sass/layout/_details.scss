@@ -1,5 +1,10 @@
 // -----------------------------------------------------------------------------
-// This file contains all styles related to the footer of the site/application.
+// This file contains all styles related to the details section of the site/application.
 // -----------------------------------------------------------------------------
 
 @use '../abstracts/' as *;
+
+.details {
+  align-self: center;
+  padding-block: to-rem(80);
+}

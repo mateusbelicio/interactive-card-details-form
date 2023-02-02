@@ -5,8 +5,9 @@
 @use '../abstracts/' as *;
 
 body {
-  font-size: minmax-font(12, 20);
+  font-size: to-rem(18);
   font-family: $ff-primary;
+  font-weight: 500;
   color: clr('neutral', 500);
 }
 
@@ -20,5 +21,5 @@ h1,
 
 input,
 input::placeholder {
-  font-size: minmax-font(12, 16);
+  font-size: to-rem(16);
 }

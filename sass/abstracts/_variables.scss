@@ -27,7 +27,7 @@ $colors: (
   ),
 );
 
-$gradient: linear-gradient(to right, clr('primary'), clr('primary', 500));
+$gradient: linear-gradient(to right, #{clr('primary')}, #{clr('primary', 500)});
 
 /// Breakpoints map
 /// @prop {String} keys - Keys are identifiers mapped to a given length
@@ -35,7 +35,7 @@ $gradient: linear-gradient(to right, clr('primary'), clr('primary', 500));
 $breakpoints: (
   'small': 37.6em,
   'medium': 50em,
-  'large': 62.5em,
+  'large': 68em,
 ) !default;
 
 /// Z-indexes map, gathering all Z layers of the application

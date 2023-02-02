@@ -1,0 +1,82 @@
+// -----------------------------------------------------------------------------
+// This file contains all styles related to the form component.
+// -----------------------------------------------------------------------------
+
+@use '../abstracts/' as *;
+
+.form {
+  display: grid;
+  grid-template-columns: [full-start] repeat(2, 1fr) [full-end];
+  row-gap: to-rem(22);
+  column-gap: to-rem(11);
+  max-width: to-rem(380);
+  margin-inline: auto;
+
+  @include breakpoint('large') {
+    row-gap: to-rem(30);
+    column-gap: to-rem(20);
+    transform: translateX(to-rem(60));
+    transition: transform 0.5s ease-out;
+  }
+
+  &__field {
+    grid-column: full;
+    border: none;
+
+    display: flex;
+    flex-direction: column;
+
+    &[name='exp-date'],
+    &[name='cvc'] {
+      grid-column: span 1;
+    }
+
+    .flex {
+      gap: to-rem(8);
+    }
+  }
+
+  &__field-name {
+    font-size: to-rem(12);
+    letter-spacing: spacing(16.5);
+    text-transform: uppercase;
+    color: clr('neutral', 600);
+    display: block;
+    margin-bottom: to-rem(10);
+  }
+
+  &__input {
+    display: block;
+    width: 100%;
+    font-size: to-rem(18);
+    padding: to-rem(14) to-rem(16);
+    border-radius: to-rem(8);
+    border: 1px solid clr('neutral', 400);
+    color: clr('neutral', 600);
+    position: relative;
+
+    &:focus-visible {
+      outline: none;
+      border-color: clr('primary', 500);
+    }
+
+    &[data-valid='false'] {
+      border-color: clr('accent');
+    }
+  }
+
+  &__error-msg {
+    font-size: to-rem(12);
+    color: clr('accent');
+    margin-top: to-rem(10);
+  }
+
+  &__input[data-valid='false'] ~ &__error-msg {
+    display: block;
+    animation: errorAlert 0.2s linear;
+  }
+
+  &__button {
+    grid-column: full;
+  }
+}
