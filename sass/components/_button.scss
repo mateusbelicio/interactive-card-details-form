@@ -12,11 +12,23 @@
   padding: to-rem(18) to-rem(32);
   border-radius: to-rem(8);
   border: 1px solid transparent;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 
   &:hover {
     background-color: clr('neutral', 300);
     color: clr('neutral', 600);
     border-color: currentColor;
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+    transform: scale(1.01) translateY(-5%);
+  }
+
+  &:active {
+    transform: scale(0.99);
+    box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+  }
+
+  &:focus-visible {
+    outline: 2px dashed clr('primary', 500);
+    outline-offset: 2px;
   }
 }

@@ -504,6 +504,36 @@ input::placeholder {
   align-self: center;
   padding-block: 5rem;
 }
+.details__form[data-validaded=false], .details__form[data-validaded=true] + .details__complete-state {
+  display: block;
+}
+.details__form[data-validaded=true], .details__form[data-validaded=false] + .details__complete-state {
+  display: none;
+}
+.details__complete-state .flex {
+  flex-direction: column;
+  align-items: center;
+  max-width: 23.75rem;
+  margin-inline: auto;
+  gap: 1.5rem;
+}
+@media only screen and (min-width: 68em) {
+  .details__complete-state .flex {
+    transform: translateX(3.75rem);
+    transition: transform 0.5s ease-out;
+  }
+}
+.details__complete-state .thanks__title {
+  font-size: 1.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-neutral-600);
+  margin-top: 1.25rem;
+}
+.details__complete-state .btn {
+  align-self: stretch;
+  margin-top: 1.875rem;
+}
 
 .btn {
   background-color: var(--clr-neutral-600);
@@ -513,12 +543,22 @@ input::placeholder {
   padding: 1.125rem 2rem;
   border-radius: 0.5rem;
   border: 1px solid transparent;
-  transition: background-color 0.2s, color 0.2s, border-color 0.2s;
+  transition: background-color 0.2s, color 0.2s, border-color 0.2s, transform 0.2s;
 }
 .btn:hover {
   background-color: var(--clr-neutral-300);
   color: var(--clr-neutral-600);
   border-color: currentColor;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  transform: scale(1.01) translateY(-5%);
+}
+.btn:active {
+  transform: scale(0.99);
+  box-shadow: 0 0.5rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.btn:focus-visible {
+  outline: 2px dashed var(--clr-primary-500);
+  outline-offset: 2px;
 }
 
 .card {
@@ -534,6 +574,11 @@ input::placeholder {
   color: var(--clr-neutral-300);
   text-transform: uppercase;
   transition: width 0.5s, padding 0.5s;
+}
+@media only screen and (min-width: 68em) {
+  .card {
+    width: 21.875rem;
+  }
 }
 @media only screen and (min-width: 87.5em) {
   .card {
@@ -551,6 +596,11 @@ input::placeholder {
   top: 45%;
   right: 12%;
   transition: font-size 0.5s;
+}
+@media only screen and (min-width: 68em) {
+  .card__cvc {
+    font-size: 0.75rem;
+  }
 }
 @media only screen and (min-width: 87.5em) {
   .card__cvc {
@@ -581,6 +631,11 @@ input::placeholder {
   height: 1.875rem;
   transition: height 0.5s;
 }
+@media only screen and (min-width: 68em) {
+  .card__symbol img {
+    height: 2.5rem;
+  }
+}
 @media only screen and (min-width: 87.5em) {
   .card__symbol img {
     height: 3rem;
@@ -590,6 +645,11 @@ input::placeholder {
   grid-column: full;
   letter-spacing: 0.12em;
 }
+@media only screen and (min-width: 68em) {
+  .card__number {
+    font-size: 1.25rem;
+  }
+}
 @media only screen and (min-width: 87.5em) {
   .card__number {
     font-size: 1.75rem;
@@ -598,6 +658,11 @@ input::placeholder {
 .card__name, .card__expiration-date {
   font-size: 0.625rem;
   letter-spacing: 0.065em;
+}
+@media only screen and (min-width: 68em) {
+  .card__name, .card__expiration-date {
+    font-size: 0.8125rem;
+  }
 }
 @media only screen and (min-width: 87.5em) {
   .card__name, .card__expiration-date {
@@ -654,6 +719,7 @@ input::placeholder {
   border: 1px solid var(--clr-neutral-400);
   color: var(--clr-neutral-600);
   position: relative;
+  caret-color: var(--clr-primary-500);
 }
 .form__input:focus-visible {
   outline: none;

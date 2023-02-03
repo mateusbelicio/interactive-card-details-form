@@ -7,4 +7,42 @@
 .details {
   align-self: center;
   padding-block: to-rem(80);
+
+  &__form[data-validaded='false'],
+  &__form[data-validaded='true'] + &__complete-state {
+    display: block;
+  }
+
+  &__form[data-validaded='true'],
+  &__form[data-validaded='false'] + &__complete-state {
+    display: none;
+  }
+
+  &__complete-state {
+    .flex {
+      flex-direction: column;
+      align-items: center;
+      max-width: to-rem(380);
+      margin-inline: auto;
+      gap: to-rem(24);
+
+      @include breakpoint('large') {
+        transform: translateX(to-rem(60));
+        transition: transform 0.5s ease-out;
+      }
+    }
+
+    .thanks__title {
+      font-size: to-rem(28);
+      letter-spacing: spacing(12);
+      text-transform: uppercase;
+      color: clr('neutral', 600);
+      margin-top: to-rem(20);
+    }
+
+    .btn {
+      align-self: stretch;
+      margin-top: to-rem(30);
+    }
+  }
 }

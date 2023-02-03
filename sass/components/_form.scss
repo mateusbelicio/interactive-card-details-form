@@ -54,6 +54,7 @@
     border: 1px solid clr('neutral', 400);
     color: clr('neutral', 600);
     position: relative;
+    caret-color: clr('primary', 500);
 
     &:focus-visible {
       outline: none;

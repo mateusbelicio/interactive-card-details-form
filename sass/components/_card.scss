@@ -20,6 +20,10 @@
 
   transition: width 0.5s, padding 0.5s;
 
+  @include breakpoint('large') {
+    width: to-rem(350);
+  }
+
   @include breakpoint(1400) {
     width: to-rem(447);
     padding: to-rem(28) to-rem(32);
@@ -37,6 +41,10 @@
     top: 45%;
     right: 12%;
     transition: font-size 0.5s;
+
+    @include breakpoint('large') {
+      font-size: to-rem(12);
+    }
 
     @include breakpoint(1400) {
       letter-spacing: spacing(12);
@@ -72,6 +80,10 @@
       height: to-rem(30);
       transition: height 0.5s;
 
+      @include breakpoint('large') {
+        height: to-rem(40);
+      }
+
       @include breakpoint(1400) {
         height: to-rem(48);
       }
@@ -82,6 +94,10 @@
     grid-column: full;
     letter-spacing: spacing(12);
 
+    @include breakpoint('large') {
+      font-size: to-rem(20);
+    }
+
     @include breakpoint(1400) {
       font-size: to-rem(28);
     }
@@ -91,6 +107,10 @@
   &__expiration-date {
     font-size: to-rem(10);
     letter-spacing: spacing(6.5);
+
+    @include breakpoint('large') {
+      font-size: to-rem(13);
+    }
 
     @include breakpoint(1400) {
       font-size: to-rem(15);

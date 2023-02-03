@@ -7,6 +7,8 @@
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <link rel="stylesheet" href="style/main.css">
+
+  <script src="js/main.js" type="module"></script>
   
   <title>Frontend Mentor | Interactive card details form</title>
 </head>
@@ -27,19 +29,21 @@
     </header>
 
     <div class="details container">
-      <div class="details__form">
+      <div class="details__form" data-validaded="false">
         <form action="#" class="form">
 
           <fieldset class="form__field" name="cardholder-name">
             <legend class="form__field-name">Cardholder name</legend>
-            <input type="text" class="form__input form__input--name" id="name" placeholder="e.g. Jane Appleseed" data-valid="false">
+            <input type="text" class="form__input form__input--name" id="name" 
+                   placeholder="e.g. Jane Appleseed" data-valid="true">
             <label for="name" class="form__label visually-hidden">Cardholder name</label>
-            <p class="form__error-msg">Error message</p>
+            <p class="form__error-msg"></p>
           </fieldset>
 
           <fieldset class="form__field" name="card-number">
             <legend class="form__field-name">Card number</legend>
-            <input type="text" class="form__input form__input--name" id="number" placeholder="e.g. 1234 5678 9123 0000" data-valid="true">
+            <input type="text" class="form__input form__input--name" id="number" 
+                   placeholder="e.g. 1234 5678 9123 0000" data-valid="true">
             <label for="number" class="form__label visually-hidden">Card number</label>
             <p class="form__error-msg"></p>
           </fieldset>
@@ -48,9 +52,11 @@
             <legend class="form__field-name">Exp. date (mm/yy)</legend>
 
             <div class="flex">
-              <input type="text" class="form__input form__input--name" id="month" placeholder="MM" data-valid="true">
+              <input type="text" class="form__input form__input--name" id="month" 
+                     placeholder="MM" data-valid="true">
               <label for="month" class="form__label visually-hidden">Month</label>
-              <input type="text" class="form__input form__input--name" id="year" placeholder="YY" data-valid="true">
+              <input type="text" class="form__input form__input--name" id="year" 
+                     placeholder="YY" data-valid="true">
               <label for="year" class="form__label visually-hidden">Year</label>
             </div>
 
@@ -59,7 +65,8 @@
 
           <fieldset class="form__field" name="cvc">
             <legend class="form__field-name">CVC</legend>
-            <input type="text" class="form__input form__input--name" id="cvc" placeholder="e.g. 123" data-valid="true">
+            <input type="text" class="form__input form__input--name" id="cvc" 
+                   placeholder="e.g. 123" data-valid="true">
             <label for="cvc" class="form__label visually-hidden">Card Verification Code</label>
             <p class="form__error-msg"></p>
           </fieldset>
@@ -69,11 +76,13 @@
         </form>
       </div>
 
-      <div class="details__complete-state" hidden>
-        <img src="images/icon-complete.svg" alt="" aria-hidden="true">
-        <h2 class="thanks__title">Thank you!</h2>
-        <p class="thanks__message">We've added your card details</p>
-        <button class="btn">Continue</button>
+      <div class="details__complete-state">
+        <div class="flex">
+          <img src="images/icon-complete.svg" alt="" aria-hidden="true">
+          <h2 class="thanks__title">Thank you!</h2>
+          <p>We've added your card details</p>
+          <button class="btn">Continue</button>
+        </div>
       </div>
 
     </div>
