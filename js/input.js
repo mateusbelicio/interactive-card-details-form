@@ -14,15 +14,42 @@ class Input {
     this._type = input.id;
     this._cardElement = document.querySelector(`.card__${this._type}`);
 
-    this._addHandlerChangeValue.bind(this)();
+    this._addHandlerChangeValue();
   }
 
   _renderValue() {
     this._cardElement.textContent = this._input.value || this._defaultValues[this._type];
   }
 
+  _maskValue() {
+    const inputValue = this._input.value;
+    const defaultValue = this._defaultValues[this._type];
+    const currentValue = this._cardElement.textContent;
+
+    if (
+      this._type !== 'name' &&
+      (inputValue.length > defaultValue.length ||
+        isNaN(inputValue.slice(-1)) ||
+        inputValue.slice(-1) === ' ')
+    ) {
+      this._input.value = inputValue.slice(0, -1);
+    }
+
+    if (this._type === 'number' && inputValue.length >= currentValue.length) {
+      if (
+        this._input.value.length === 4 ||
+        this._input.value.length === 9 ||
+        this._input.value.length === 14
+      )
+        this._input.value += ' ';
+    }
+  }
+
   _addHandlerChangeValue() {
-    this._input.addEventListener('input', this._renderValue.bind(this));
+    this._input.addEventListener('input', () => {
+      this._maskValue();
+      this._renderValue();
+    });
   }
 }
 
