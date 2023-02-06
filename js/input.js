@@ -1,60 +1,97 @@
 class Input {
-  _defaultValues = {
-    number: '0000 0000 0000 0000',
-    name: 'Jane Appleseed',
-    month: '00',
-    year: '00',
-    cvc: '000',
+  valid = false;
+  _typesDefinitions = {
+    number: {
+      placeholder: '0000 0000 0000 0000',
+      mask(value) {
+        return value
+          .replace(/\D/g, '')
+          .replace(/(\d{4})(\d)/, '$1 $2')
+          .replace(/(\d{4})(\d)/, '$1 $2')
+          .replace(/(\d{4})(\d)/, '$1 $2')
+          .replace(/(\s\d{4})\d+?$/, '$1');
+      },
+    },
+    name: {
+      placeholder: 'Jane Appleseed',
+      mask(value) {
+        return value.replace(/[0-9!@#¨$%^&*)(+=._,.;/[{}?'"\]\\-]+/g, '');
+      },
+    },
+    month: {
+      placeholder: '00',
+      mask(value) {
+        return value
+          .replace(/\D/g, '')
+          .replace(/^([2-9]{1})/, '0$1')
+          .replace(/^(0)0/, '$1')
+          .replace(/^(0[1-9])\d/, '$1')
+          .replace(/^(1[0-2])\d/, '$1')
+          .replace(/^(1)([3-9])/, '$1');
+      },
+    },
+    year: {
+      placeholder: '00',
+      mask(value) {
+        return value.replace(/\D/g, '').replace(/(\d{2})\d+?$/, '$1');
+      },
+    },
+    cvc: {
+      placeholder: '000',
+      mask(value) {
+        return value.replace(/\D/g, '').replace(/(\d{3})\d+?$/, '$1');
+      },
+    },
   };
 
   constructor(input) {
-    this._input = input;
+    this.input = input;
     this._field = input.closest('.form__field');
     this._error = this._field.querySelector('.form__error-msg');
     this._type = input.id;
     this._cardElement = document.querySelector(`.card__${this._type}`);
 
-    this._addHandlerChangeValue();
+    this._addHandlerInputValue();
+  }
+
+  renderError(msg = "Can't be blank") {
+    this._error.textContent = msg;
+    this.input.dataset.valid = false;
+    this.valid = false;
+  }
+
+  clearError() {
+    this._error.textContent = '';
+    this.input.dataset.valid = true;
+    this.valid = true;
+  }
+
+  clearAll() {
+    this.clearError();
+    this.input.value = '';
   }
 
   _renderValue() {
-    this._cardElement.textContent = this._input.value || this._defaultValues[this._type];
+    this._cardElement.textContent =
+      this.input.value || this._typesDefinitions[this._type].placeholder;
   }
 
   _maskValue() {
-    const inputValue = this._input.value;
-    const defaultValue = this._defaultValues[this._type];
-    const currentValue = this._cardElement.textContent;
-
-    if (
-      this._type !== 'name' &&
-      (inputValue.length > defaultValue.length ||
-        isNaN(inputValue.slice(-1)) ||
-        inputValue.slice(-1) === ' ')
-    ) {
-      this._input.value = inputValue.slice(0, -1);
-    }
-
-    if (this._type === 'number' && inputValue.length >= currentValue.length) {
-      if (
-        this._input.value.length === 4 ||
-        this._input.value.length === 9 ||
-        this._input.value.length === 14
-      )
-        this._input.value += ' ';
-    }
+    this.input.value = this._typesDefinitions[this._type].mask(this.input.value);
   }
 
-  _addHandlerChangeValue() {
-    this._input.addEventListener('input', () => {
+  _addHandlerInputValue() {
+    this.input.addEventListener('input', () => {
       this._maskValue();
       this._renderValue();
     });
   }
 }
 
-export const inputName = new Input(document.getElementById('name'));
-export const inputNumber = new Input(document.getElementById('number'));
-export const inputMonth = new Input(document.getElementById('month'));
-export const inputYear = new Input(document.getElementById('year'));
-export const inputCode = new Input(document.getElementById('cvc'));
+const inputName = new Input(document.getElementById('name'));
+const inputNumber = new Input(document.getElementById('number'));
+const inputMonth = new Input(document.getElementById('month'));
+const inputYear = new Input(document.getElementById('year'));
+const inputCode = new Input(document.getElementById('cvc'));
+
+export const inputs = [inputName, inputNumber, inputMonth, inputYear, inputCode];
