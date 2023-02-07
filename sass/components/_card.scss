@@ -68,6 +68,10 @@
     row-gap: to-rem(18);
     line-height: 1;
 
+    @include breakpoint(1400) {
+      row-gap: to-rem(24);
+    }
+
     & > * {
       transition: font-size 0.5s;
     }

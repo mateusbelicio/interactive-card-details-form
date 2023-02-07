@@ -621,6 +621,11 @@ input::placeholder {
   row-gap: 1.125rem;
   line-height: 1;
 }
+@media only screen and (min-width: 87.5em) {
+  .card__info {
+    row-gap: 1.5rem;
+  }
+}
 .card__info > * {
   transition: font-size 0.5s;
 }
